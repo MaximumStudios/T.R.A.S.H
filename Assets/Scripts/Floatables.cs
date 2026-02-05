@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Floatables : MonoBehaviour
 {
-    protected Rigidbody2D rb;
+    public Rigidbody2D rb;
     public float AtmosDensity=0f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public virtual void Start()
