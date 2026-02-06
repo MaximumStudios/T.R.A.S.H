@@ -38,18 +38,18 @@ public class BagBehaviour : Floatables
         {
             if (AtmosDensity < 1)
             {
-                StartCoroutine(Float(FloatTime + 350 * Mathf.Pow(AtmosDensity, 2)));
+                StartCoroutine(Float(FloatTime));
             }
         }
         else
         {
-            StopCoroutine("Float");
+            StopAllCoroutines();
         }
     }
 
     private void Collect()
     {
-        Collider2D[] Colls=Physics2D.OverlapCircleAll(transform.position, 2.02f + hold * 0.1f);
+        Collider2D[] Colls=Physics2D.OverlapCircleAll(transform.position, 1.5f);
         foreach (Collider2D Coll in Colls)
         {
             if (Coll.transform.GetComponent<Trash>()&&hold<MaxHold)
@@ -81,7 +81,11 @@ public class BagBehaviour : Floatables
     }
     IEnumerator Float(float waitTime)
     {
-        yield return new WaitForSeconds(waitTime);
+        for (float i = 0; i < waitTime+ 350 * Mathf.Pow(AtmosDensity, 2); i += Time.deltaTime)
+        {
+            yield return null;
+        }
+
         Expel();
         Destroy(gameObject);
     }
