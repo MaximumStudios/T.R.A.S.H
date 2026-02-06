@@ -57,13 +57,13 @@ public class PlayerMovement : Floatables
 
     private void CreateDetach()
     {
-        if (spring.enabled)
+        if (spring.enabled&&ActiveBag)
         {
             spring.connectedBody = null;
             spring.enabled = false;
             ActiveBagBehaviour.Connect(false);
         }
-        else if(ActiveBag != null&&Physics2D.Distance(coll, ActiveBagCollider).distance<ConnectDistance)
+        else if(ActiveBag &&Physics2D.Distance(coll, ActiveBagCollider).distance<ConnectDistance)
         {
             ActiveBagBehaviour.Connect(true);
             OnConnectionDistance = (transform.position-ActiveBag.transform.position).magnitude;
