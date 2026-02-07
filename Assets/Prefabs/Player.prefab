@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1110248412820752387}
   - component: {fileID: 8958044834058565580}
   - component: {fileID: 6059911915351487511}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48,6 +48,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b564182d9241c7d4eb7b054e433174a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
+  rb: {fileID: 0}
   AtmosDensity: 0.25
   baseAccel: 5
   baseMaxSpeed: 50
