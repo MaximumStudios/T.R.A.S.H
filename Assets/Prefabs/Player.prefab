@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1110248412820752387}
   - component: {fileID: 8958044834058565580}
   - component: {fileID: 6059911915351487511}
+  - component: {fileID: 8140699930872116895}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -50,7 +51,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
   rb: {fileID: 0}
   AtmosDensity: 0.25
-  baseAccel: 5
+  baseAccel: 10
   baseMaxSpeed: 50
   ConnectDistance: 2
   Bag: {fileID: 7271460146342950140, guid: 34f371ab256901a4289026f28b396632, type: 3}
@@ -148,7 +149,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 0.5
+  m_Radius: 0.45
 --- !u!50 &8958044834058565580
 Rigidbody2D:
   serializedVersion: 5
@@ -294,3 +295,24 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!231 &8140699930872116895
+SpringJoint2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1937468429866333774}
+  m_Enabled: 1
+  serializedVersion: 4
+  m_EnableCollision: 1
+  m_ConnectedRigidBody: {fileID: 0}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_BreakAction: 3
+  m_AutoConfigureConnectedAnchor: 0
+  m_Anchor: {x: 0, y: 0}
+  m_ConnectedAnchor: {x: 0, y: 0}
+  m_AutoConfigureDistance: 0
+  m_Distance: 3
+  m_DampingRatio: 0
+  m_Frequency: 1
