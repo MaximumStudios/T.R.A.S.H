@@ -1,7 +1,9 @@
+using System.Collections;
 using UnityEngine;
 
 public class Floatables : MonoBehaviour
 {
+    [SerializeField]private float DeathTime = 0.2f;
     public Rigidbody2D rb;
     public float AtmosDensity=0f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -14,5 +16,14 @@ public class Floatables : MonoBehaviour
     public virtual void Update()
     {
         rb.linearDamping = AtmosDensity;
+    }
+    virtual public IEnumerator Death(float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
+        Destroy(gameObject);
+    }
+    public void Die()
+    {
+        StartCoroutine(Death(DeathTime));
     }
 }

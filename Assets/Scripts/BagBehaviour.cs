@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class BagBehaviour : Floatables
 {
-    private float DeathTime = 2f;
     private float FloatTime = 10f;
     [SerializeField] private int MaxHold = 5;
     private int hold = 0;
@@ -23,12 +22,6 @@ public class BagBehaviour : Floatables
     {
         Collect();
         transform.localScale = new Vector2(2+hold*0.1f, 2+0.1f*hold);
-    }
-
-
-    public void Die()
-    {
-        StartCoroutine(Death(DeathTime));
     }
 
     public void Connect(bool connected)
@@ -73,7 +66,7 @@ public class BagBehaviour : Floatables
         }
     }
 
-    IEnumerator Death(float waitTime)
+    override public IEnumerator Death(float waitTime)
     {
         yield return new WaitForSeconds(waitTime);
         Expel();
@@ -81,7 +74,7 @@ public class BagBehaviour : Floatables
     }
     IEnumerator Float(float waitTime)
     {
-        for (float i = 0; i < waitTime+ 350 * Mathf.Pow(AtmosDensity, 2); i += Time.deltaTime)
+        for (float i = 0; i < waitTime+ (AtmosDensity != 1 ? 1 / (1 - Mathf.Pow(AtmosDensity, 2)): 9999999); i += Time.deltaTime)
         {
             yield return null;
         }

@@ -183,5 +183,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed6ed24afeaf944a828ae4d906a4da1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Trash
+  DeathTime: 0.05
   rb: {fileID: 0}
   AtmosDensity: 0

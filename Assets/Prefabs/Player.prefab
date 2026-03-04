@@ -49,10 +49,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b564182d9241c7d4eb7b054e433174a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
+  DeathTime: 0.2
   rb: {fileID: 0}
-  AtmosDensity: 0.25
+  AtmosDensity: 0
   baseAccel: 10
-  baseMaxSpeed: 50
+  baseMaxSpeed: 30
   ConnectDistance: 2
   Bag: {fileID: 7271460146342950140, guid: 34f371ab256901a4289026f28b396632, type: 3}
 --- !u!212 &4793383222149912064
@@ -104,8 +105,8 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0.006026745, g: 1, b: 0, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 1f4ef853e39877449a3ea77d01cfd659, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -164,7 +165,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDamping: 1
-  m_AngularDamping: 0.05
+  m_AngularDamping: 1
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
