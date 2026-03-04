@@ -11,6 +11,7 @@ public class KnotSizeInfluence : MonoBehaviour
     CinemachineCamera activeCamera;
     [SerializeField] private List<float> OrthographicSize;
     private float activeKnot=0;
+    public float startKnot=0;
     private float activeSize;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -18,7 +19,7 @@ public class KnotSizeInfluence : MonoBehaviour
     {
         spline = GetComponent<CinemachineSplineDolly>();
         activeCamera = GetComponent<CinemachineCamera>();
-        activeKnot=0;
+        activeKnot=startKnot;
         activeSize=OrthographicSize[0];
         MoveTo(activeKnot);
     }
